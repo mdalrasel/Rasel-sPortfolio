@@ -1,101 +1,135 @@
-import React from 'react';
-import { ImCross } from 'react-icons/im';
+import React, { useRef, useState } from "react";
+import { ImCross } from "react-icons/im";
 import { CiEdit, CiMail } from "react-icons/ci";
 import { IoIosSend } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const HireForm = ({ onClose }) => {
-    return (
-        <div className="bg-gray-900 text-white rounded-lg shadow-xl p-8">
-        <div className="flex justify-between items-start mb-4">
-            <h2 className="text-2xl font-bold">Start Your Project</h2>
-            <button onClick={onClose} className="text-gray-400 hover:text-white">
-                <ImCross className="h-6 w-6"/>
-                 
-            </button>
-        </div>
-        <p className="text-gray-300 mb-6">
-            Let's discuss how we can collaborate on your next big idea.
-        </p>
-        <form className="space-y-4" action="#" method="POST">
-            <div className="space-y-2">
-                <label htmlFor="name" className="sr-only">Your Name</label>
-                <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <FaUser className="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                    </div>
-                    <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        autoComplete="name"
-                        required
-                        className="w-full px-3 py-3 pl-10 text-gray-100 border border-gray-700 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800"
-                        placeholder="Name"
-                    />
-                </div>
-            </div>
-            <div className="space-y-2">
-                <label htmlFor="email" className="sr-only">Your Email</label>
-                <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <CiMail className="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                    </div>
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
-                        required
-                        className="w-full px-3 py-3 pl-10 text-gray-100 border border-gray-700 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800"
-                        placeholder="Email"
-                    />
-                </div>
-            </div>
-            <div className="space-y-2">
-                <label htmlFor="subject" className="sr-only">Subject</label>
-                <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <CiEdit className="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                    </div>
-                    <input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        readOnly
-                        value="Hire Shariar for a project"
-                        className="w-full px-3 py-3 pl-10 text-gray-100 border border-gray-700 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800"
-                    />
-                </div>
-            </div>
-            <div className="space-y-2">
-                <label htmlFor="projectDetails" className="sr-only">Project Details</label>
-                <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 pt-3 flex items-start pointer-events-none">
-                    <FiFileText className="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                    </div>
-                    <textarea
-                        id="projectDetails"
-                        name="projectDetails"
-                        rows="4"
-                        className="w-full px-3 py-3 pl-10 text-gray-100 border border-gray-700 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-800"
-                        placeholder="Describe your project..."
-                    ></textarea>
-                </div>
-            </div>
+    const form = useRef();
+    const [loading, setLoading] = useState(false);
+    const [successMsg, setSuccessMsg] = useState("");
+    const [errorMsg, setErrorMsg] = useState("");
 
-            <div className="flex items-center justify-center">
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setSuccessMsg("");
+        setErrorMsg("");
+
+        emailjs
+            .sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+                (result) => {
+                    setLoading(false);
+                    setSuccessMsg("Thank you! Your proposal has been sent.");
+                    form.current.reset();
+                    setTimeout(() => {
+                        setSuccessMsg("");
+                        onClose();
+                    }, 3000);
+                    console.log(result)
+                },
+                (error) => {
+                    setLoading(false);
+                    setErrorMsg("Oops! Something went wrong. Please try again.");
+                    console.error(error.text);
+                }
+            );
+    };
+
+    return (
+        <div className="bg-gray-900 text-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-5">
+                <h2 className="text-2xl font-semibold">Start Your Project</h2>
                 <button
-                    type="submit"
-                    className="w-full py-3 px-6 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300 flex items-center justify-center gap-2"
+                    onClick={onClose}
+                    aria-label="Close modal"
+                    className="text-gray-400 hover:text-white transition"
                 >
-                    <IoIosSend className="h-5 w-5 mr-2"/>
-                    Send Proposal
+                    <ImCross className="w-6 h-6" />
                 </button>
             </div>
-        </form>
-    </div>
+
+            {/* Description */}
+            <p className="text-gray-300 mb-6">
+                Let's discuss how we can collaborate on your next big idea.
+            </p>
+
+            {/* Success/Error Messages */}
+            {successMsg && (
+                <div className="mb-4 p-3 bg-green-600 rounded">{successMsg}</div>
+            )}
+            {errorMsg && <div className="mb-4 p-3 bg-red-600 rounded">{errorMsg}</div>}
+
+            {/* Form */}
+            <form className="space-y-4" ref={form} onSubmit={sendEmail}>
+                {/* Name */}
+                <div className="relative">
+                    <FaUser className="absolute left-3 top-4 text-gray-400" />
+                    <input
+                        type="text"
+                        name="user_name"
+                        placeholder="Your Name"
+                        required
+                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    />
+                </div>
+
+                {/* Email */}
+                <div className="relative">
+                    <CiMail className="absolute left-3 top-4 text-gray-400" />
+                    <input
+                        type="email"
+                        name="user_email"
+                        placeholder="Your Email"
+                        required
+                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    />
+                </div>
+
+                {/* Subject */}
+                <div className="relative">
+                    <CiEdit className="absolute left-3 top-4 text-gray-400" />
+                    <input
+                        type="text"
+                        name="subject"
+                        defaultValue="Hire Rasel for a project"
+                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                    />
+                </div>
+
+                {/* Project Details */}
+                <div className="relative">
+                    <FiFileText className="absolute left-3 top-4 text-gray-400" />
+                    <textarea
+                        name="message"
+                        placeholder="Describe your project..."
+                        rows="4"
+                        required
+                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                    />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className={`w-full py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
+                        }`}
+                >
+                    <IoIosSend className="w-5 h-5" />
+                    {loading ? "Sending..." : "Send Proposal"}
+                </button>
+            </form>
+        </div>
     );
 };
 
