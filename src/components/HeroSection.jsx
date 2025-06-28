@@ -45,7 +45,7 @@ const HeroSection = () => {
                 <div className="mt-6 flex flex-wrap gap-4">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl transition flex items-center gap-2"
+                        className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2"
                     >
                         <BiSolidShoppingBags /> Hire Me
                     </button>

@@ -2,15 +2,17 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import Projects from '../components/projects';
-import ParticleBackground from '../components/ParticleBackground ';
+import SkillSection from '../components/SkillSection';
+import ContactSection from '../components/ContactSection';
 
 const Home = () => {
     return (
         <div>
             <HeroSection />
-            <ParticleBackground></ParticleBackground>
             <AboutSection  />
+            <SkillSection />
             <Projects />
+            <ContactSection />
         </div>
     );
 };

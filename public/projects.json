@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "E-commerce Platform",
+    "description": "A fully functional e-commerce web app with authentication, cart, admin panel, and payment integration.",
+    "image": "/projects/ecommerce.png",
+    "tech": ["React", "Node.js", "MongoDB", "Stripe"],
+    "github": "https://github.com/yourusername/ecommerce",
+    "live": "https://ecommerce.example.com",
+    "details": "This project includes a user-friendly frontend, a secure backend API, and a robust database structure using MongoDB. Stripe is integrated for handling online payments, and there's also an admin dashboard for managing products and orders."
+  },
+  {
+    "id": 2,
+    "title": "Blog Platform",
+    "description": "A multi-user blog application with markdown support, authentication and role-based dashboard.",
+    "image": "/projects/blog.png",
+    "tech": ["Next.js", "Firebase", "Tailwind CSS"],
+    "github": "https://github.com/yourusername/blog",
+    "live": "https://blog.example.com",
+    "details": "Users can register, write articles in markdown, edit and delete posts. Admins can manage users. Realtime Firebase database ensures fast performance."
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website",
+    "description": "My personal portfolio built using modern web technologies and deployed on Vercel.",
+    "image": "/projects/portfolio.png",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "github": "https://github.com/yourusername/portfolio",
+    "live": "https://yourportfolio.com",
+    "details": "Showcasing my skills, projects, and contact form. Includes dark/light mode, smooth scroll, and responsive layout."
+  }
+]
