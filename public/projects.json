@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Platform",
-    "description": "A fully functional e-commerce web app with authentication, cart, admin panel, and payment integration.",
-    "image": "/projects/ecommerce.png",
-    "tech": ["React", "Node.js", "MongoDB", "Stripe"],
-    "github": "https://github.com/yourusername/ecommerce",
-    "live": "https://ecommerce.example.com",
-    "details": "This project includes a user-friendly frontend, a secure backend API, and a robust database structure using MongoDB. Stripe is integrated for handling online payments, and there's also an admin dashboard for managing products and orders."
+    "title": "Helpify",
+    "description": "A modern service-sharing app with real-time updates.",
+    "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
+    "tech": ["React", "Node.js", "MongoDB", "Firebase"],
+    "github": "https://github.com/yourusername/helpify",
+    "live": "https://helpify1.netlify.app",
+    "details": "Helpify is a full-stack web application for service sharing..."
   },
   {
-    "id": 2,
-    "title": "Blog Platform",
-    "description": "A multi-user blog application with markdown support, authentication and role-based dashboard.",
-    "image": "/projects/blog.png",
-    "tech": ["Next.js", "Firebase", "Tailwind CSS"],
-    "github": "https://github.com/yourusername/blog",
-    "live": "https://blog.example.com",
-    "details": "Users can register, write articles in markdown, edit and delete posts. Admins can manage users. Realtime Firebase database ensures fast performance."
-  },
+  "id": 2,
+  "title": "Work Window",
+  "description": "A freelance task marketplace connecting clients with freelancers for micro-jobs and task-based bidding.",
+  "image": "https://i.ibb.co/WWNtwmrL/screenshot-taskhive-1.png",
+  "tech": ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
+  "github": "https://github.com/yourusername/work-window",
+  "live": "https://work-window01.netlify.app/",
+  "details": "Work Window is a responsive freelance task marketplace allowing users to post tasks, bid on jobs, and manage tasks in a personalized dashboard. It features secure authentication (email/password & Google), dynamic task listing, bid tracking, and a sleek UI enhanced with React Simple Typewriter and React Awesome Reveal."
+},
   {
     "id": 3,
     "title": "Portfolio Website",
     "description": "My personal portfolio built using modern web technologies and deployed on Vercel.",
-    "image": "/projects/portfolio.png",
+    "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
     "tech": ["React", "Tailwind CSS", "Vercel"],
     "github": "https://github.com/yourusername/portfolio",
     "live": "https://yourportfolio.com",

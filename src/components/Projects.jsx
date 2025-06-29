@@ -8,7 +8,7 @@ const ProjectSection = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("/public/projects.json")
+    fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Failed to load projects:", err));
@@ -54,7 +54,7 @@ const ProjectSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover md:h-full"
+                  className="w-full h-64 object-cover md:h-80"
                 />
               </div>
 
