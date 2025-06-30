@@ -1,0 +1,12 @@
+[
+  {
+    "category": "React",
+    "articles": [
+      {
+        "id": "react-intro",
+        "title": "React JS: ওয়েব ডেভেলপমেন্টের ভবিষ্যত",
+        "file": "../src/articles/react-intro.md"
+      }
+    ]
+  }
+]

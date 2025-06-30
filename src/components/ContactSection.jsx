@@ -34,7 +34,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-900">
+        <section id="contact" className="py-20 px-4 ">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-purple-500 inline-flex items-center justify-center gap-3">
                     <FaEnvelopeOpenText className="text-purple-400" />

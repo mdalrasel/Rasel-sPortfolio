@@ -2,38 +2,56 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { RiDownload2Fill } from "react-icons/ri";
 import CustomLogo from "./CustomLogo";
+import { Link } from "react-router"; 
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", to: "/#" },
+    { name: "About", to: "/#about" },
+    { name: "Skills", to: "/#skills" },
+    { name: "Projects", to: "/#projects" },
+    { name: "Articles", to: "/articles" },
+    { name: "Contact", to: "/#contact" },
   ];
-
-  // smooth scroll: browser default হিসেবে html { scroll-behavior: smooth } দিতে হবে css এ
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <CustomLogo />
+          <Link to="/">
+            <CustomLogo />
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              if (item.to.includes("#")) {
+                // HashLink ব্যবহার
+                return (
+                  <HashLink
+                    key={item.name}
+                    smooth
+                    to={item.to}
+                    className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
+                  >
+                    {item.name}
+                  </HashLink>
+                );
+              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
 
             {/* Resume Button */}
             <a
@@ -64,16 +82,31 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 pb-6">
           <nav className="flex flex-col space-y-3 mt-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              if (item.to.includes("#")) {
+                return (
+                  <HashLink
+                    key={item.name}
+                    smooth
+                    to={item.to}
+                    onClick={() => setIsOpen(false)}
+                    className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
+                  >
+                    {item.name}
+                  </HashLink>
+                );
+              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
 
             {/* Resume Button in mobile */}
             <a

@@ -29,7 +29,7 @@ const ProjectSection = () => {
       id="projects"
       className="py-20 px-4 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-purple-500 inline-flex items-center gap-3 mb-4">

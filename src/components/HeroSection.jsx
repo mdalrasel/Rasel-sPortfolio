@@ -10,12 +10,12 @@ const HeroSection = () => {
 
 
     return (
-        <section className="container mx-auto flex flex-col md:flex-row items-center justify-center bg-[#0f172a] py-12">
+        <section className=" flex flex-col gap-5 md:flex-row items-center justify-center bg-[#0f172a] py-12">
             <div className="flex-1">
                 <h2 className="text-sm text-purple-300 mb-2">
                     Frontend Developer & UI/UX Learner
                 </h2>
-                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+                <h1 className="text-3xl  font-bold text-white leading-tight mb-4">
                     Hi, I'm <span className="text-purple-500">MD. AL RASEL</span>
 
                 </h1>
