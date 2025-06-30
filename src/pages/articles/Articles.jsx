@@ -13,8 +13,10 @@ const Articles = () => {
       .then((res) => res.json())
       .then((data) => {
         setArticleData(data);
-        setSelectedCategory(data[0]?.category);
-        setSelectedArticle(data[0]?.articles[0]);
+        if (data.length > 0) {
+          setSelectedCategory(data[0].category);
+          setSelectedArticle(data[0].articles[0]);
+        }
       });
   }, []);
 
@@ -22,7 +24,8 @@ const Articles = () => {
     if (selectedArticle?.file) {
       fetch(selectedArticle.file)
         .then((res) => res.text())
-        .then((text) => setMarkdownContent(text));
+        .then((text) => setMarkdownContent(text))
+        .catch(() => setMarkdownContent("Markdown file could not be loaded."));
     } else {
       setMarkdownContent("");
     }
@@ -32,14 +35,15 @@ const Articles = () => {
     const category = e.target.value;
     setSelectedCategory(category);
 
-    const found = articleData.find((d) => d.category === category);
-    if (found) {
-      setSelectedArticle(found.articles[0]);
+    const foundCategory = articleData.find((sec) => sec.category === category);
+    if (foundCategory) {
+      setSelectedArticle(foundCategory.articles[0]);
     }
   };
 
-  // Function to strip markdown to plain text (simple way)
+  // Strip markdown to plain text for copying (basic)
   const stripMarkdown = (markdown) => {
+    if (!markdown) return "";
     return markdown.replace(/[#_*>\-\[\]\(\)`]/g, "").trim();
   };
 
@@ -77,41 +81,45 @@ const Articles = () => {
       <div className="flex flex-col md:flex-row">
         {/* Sidebar */}
         <aside className="hidden md:block md:w-64 md:h-[calc(100vh-64px)] md:fixed md:top-16 md:left-0 overflow-y-auto bg-gray-100 dark:bg-gray-800 border-r border-gray-300 dark:border-gray-700 p-4 z-30">
-          {articleData.map((section) => (
-            <div key={section.category} className="mb-4">
-              <button
-                onClick={() => {
-                  setSelectedCategory(section.category);
-                  setSelectedArticle(section.articles[0]);
-                }}
-                className={`w-full text-left font-semibold text-base px-2 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition flex justify-between items-center ${
-                  selectedCategory === section.category
-                    ? "bg-purple-600 text-white"
-                    : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                }`}
-              >
-                {section.category}
-              </button>
-              {selectedCategory === section.category && (
-                <ul className="mt-2 ml-4 space-y-1">
-                  {section.articles.map((article) => (
-                    <li key={article.id}>
-                      <button
-                        onClick={() => setSelectedArticle(article)}
-                        className={`w-full text-left px-2 py-1 rounded text-sm ${
-                          selectedArticle?.id === article.id
-                            ? "bg-purple-600 text-white"
-                            : "text-gray-800 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900"
-                        }`}
-                      >
-                        {article.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+          {articleData.map((section) => {
+            const isSelectedCategory = selectedCategory === section.category;
+            return (
+              <div key={section.category} className="mb-4">
+                <button
+                  onClick={() => {
+                    setSelectedCategory(section.category);
+                    setSelectedArticle(section.articles[0]);
+                  }}
+                  className={`w-full text-left font-semibold text-base px-2 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition flex justify-between items-center ${
+                    isSelectedCategory
+                      ? "bg-purple-600 text-white"
+                      : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  }`}
+                >
+                  {section.category}
+                  <span>{isSelectedCategory ? "▲" : "▼"}</span>
+                </button>
+                {isSelectedCategory && (
+                  <ul className="mt-2 ml-4 space-y-1">
+                    {section.articles.map((article) => (
+                      <li key={article.id}>
+                        <button
+                          onClick={() => setSelectedArticle(article)}
+                          className={`w-full text-left px-2 py-1 rounded text-sm ${
+                            selectedArticle?.id === article.id
+                              ? "bg-purple-600 text-white"
+                              : "text-gray-800 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900"
+                          }`}
+                        >
+                          {article.title}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
         </aside>
 
         {/* Article Content */}

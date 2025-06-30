@@ -10,6 +10,7 @@ import {
     FaGithub,
     FaEnvelopeOpenText,
     FaFacebookF,
+    FaWhatsapp,
 } from "react-icons/fa";
 
 const ContactSection = () => {
@@ -50,26 +51,61 @@ const ContactSection = () => {
                 {/* Contact Info */}
                 <div className="bg-purple-50 dark:bg-gray-800 p-8 rounded-lg shadow-md flex flex-col justify-between">
                     <div>
-                         <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
-      Contact Information
-    </h3>
-    <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
-      Hi! I’m Rasel, a passionate Frontend Developer.  
-      I’m available for freelance projects, full-time roles, or any collaboration.  
-      Feel free to reach out anytime!
-    </p>
-                        <ul className="space-y-5 text-gray-700 dark:text-gray-200">
+                        <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
+                            Contact Information
+                        </h3>
+                        <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
+                            Hi! I’m Rasel, a passionate Frontend Developer.
+                            I’m available for freelance projects, full-time roles, or any collaboration.
+                            Feel free to reach out anytime!
+                        </p>
+                        <ul className="space-y-5 text-purple-700 dark:text-purple-300">
+                            {/* Email with mailto link */}
                             <li className="flex items-center gap-4">
-                                <FaEnvelope className="text-purple-500 text-lg" />
-                                <span className="break-all">mdalrasel.dev@gmail.com</span>
+                                <FaEnvelope className="text-purple-600 text-lg" />
+                                <a
+                                    href="mailto:mdalrasel.dev@gmail.com"
+                                    className="  text-gray-300 hover:text-teal-400  "
+                                >
+                                    mdalrasel.dev@gmail.com
+                                </a>
                             </li>
+
+                            {/* Phone with tel link */}
                             <li className="flex items-center gap-4">
-                                <FaPhoneAlt className="text-purple-500 text-lg" />
-                                +880 1681-579695
+                                <FaPhoneAlt className="text-purple-600 text-lg" />
+                                <a
+                                    href="tel:+8801681579695"
+                                    className="  text-gray-300 hover:text-teal-400 "
+                                >
+                                    +880 1681-579695
+                                </a>
                             </li>
+
+                            {/* WhatsApp with wa.me link */}
                             <li className="flex items-center gap-4">
-                                <FaMapMarkerAlt className="text-purple-500 text-lg" />
-                                Dhaka, Bangladesh
+                                <FaWhatsapp className="text-purple-600 text-lg" />
+                                <a
+                                    href="https://wa.me/8801681579695"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="  text-gray-300 hover:text-teal-400 "
+                                >
+                                    +880 1681-579695
+                                </a>
+                            </li>
+
+                            {/* Location - Google Maps link */}
+                            <li className="flex items-center gap-4">
+                                <FaMapMarkerAlt className="text-purple-600 text-lg" />
+                                <a
+                                    href="https://www.google.com/maps/place/Dhaka,+Bangladesh"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="  text-gray-300 hover:text-teal-400 "
+                                >
+                                    Dhaka, Bangladesh
+                                </a>
                             </li>
                         </ul>
                     </div>

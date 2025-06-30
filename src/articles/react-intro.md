@@ -36,11 +36,5 @@ React অন্যান্য লাইব্রেরি বা ফ্রে�
 
 ## ছোট একটি React কম্পোনেন্টের উদাহরণ
 
-```jsx
-import React from "react";
+![React component](https://i.ibb.co/FktJkxn5/xiLHo.png)
 
-const HelloWorld = () => {
-  return <h1>Hello, React World!</h1>;
-};
-
-export default HelloWorld;
