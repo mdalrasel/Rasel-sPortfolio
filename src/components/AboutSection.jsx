@@ -1,13 +1,15 @@
-// components/AboutSection.jsx
-
 import { FaUserTie } from "react-icons/fa";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 px-4">
+    <section id="about" className="py-20 px-4">
       <div className="max-w-5xl mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-10 text-center">
+        <div
+          className="mb-10 text-center"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-purple-500 inline-flex items-center gap-2">
             <FaUserTie className="text-purple-400" /> About Me
           </h2>
@@ -19,7 +21,11 @@ const AboutSection = () => {
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Text */}
-          <div>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <h3 className="text-2xl font-semibold text-white mb-4">
               I'm Rasel — A Passionate Frontend Developer from Bangladesh
             </h3>
@@ -33,16 +39,19 @@ const AboutSection = () => {
             <p className="text-sm text-gray-500 italic">Let's build something awesome together!</p>
           </div>
 
-          {/* Optional Image or Skill Badges (optional part) */}
-          <div className="flex flex-wrap gap-3 justify-center md:justify-end">
-            {/* Existing */}
+          {/* Skills */}
+          <div
+            className="flex flex-wrap gap-3 justify-center md:justify-end"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <span className="bg-purple-700/20 border border-purple-500 text-purple-300 px-4 py-2 rounded-full text-sm font-medium">React</span>
             <span className="bg-indigo-700/20 border border-indigo-500 text-indigo-300 px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
             <span className="bg-blue-700/20 border border-blue-500 text-blue-300 px-4 py-2 rounded-full text-sm font-medium">Firebase</span>
             <span className="bg-green-700/20 border border-green-500 text-green-300 px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
             <span className="bg-gray-700/20 border border-gray-500 text-gray-300 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
 
-            {/* Additions */}
             <span className="bg-yellow-700/20 border border-yellow-500 text-yellow-300 px-4 py-2 rounded-full text-sm font-medium">Express.js</span>
             <span className="bg-pink-700/20 border border-pink-500 text-pink-300 px-4 py-2 rounded-full text-sm font-medium">DaisyUI</span>
             <span className="bg-red-700/20 border border-red-500 text-red-300 px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
