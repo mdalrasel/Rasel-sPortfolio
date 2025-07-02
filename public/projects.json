@@ -7,7 +7,7 @@
     "tech": ["React", "Node.js", "MongoDB", "Firebase"],
     "github": "https://github.com/yourusername/helpify",
     "live": "https://helpify1.netlify.app",
-    "details": "Helpify is a full-stack web application for service sharing..."
+    "details": "Helpify is a modern service-sharing web application where users can find, offer, and book various types of services with ease. It's designed to provide a seamless and intuitive experience for service management, booking, and real-time status updates."
   },
   {
   "id": 2,

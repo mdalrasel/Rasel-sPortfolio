@@ -53,7 +53,7 @@ const ContactSection = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
         {/* Contact Info */}
         <div
-          className="bg-purple-50 dark:bg-gray-800 p-8 rounded-lg shadow-md flex flex-col justify-between"
+          className=" p-8 border rounded-md shadow-md flex flex-col justify-between"
           data-aos="fade-right"
           data-aos-duration="1000"
           data-aos-delay="100"
@@ -152,7 +152,7 @@ const ContactSection = () => {
 
         {/* Contact Form */}
         <div
-          className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md"
+          className=" p-8 border rounded-md shadow-md"
           data-aos="fade-left"
           data-aos-duration="1000"
           data-aos-delay="200"
@@ -170,7 +170,7 @@ const ContactSection = () => {
                 type="text"
                 name="user_name"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100"
               />
             </div>
             <div>
@@ -181,7 +181,7 @@ const ContactSection = () => {
                 type="email"
                 name="user_email"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100"
               />
             </div>
             <div className="flex-grow">
@@ -192,7 +192,7 @@ const ContactSection = () => {
                 name="message"
                 rows="5"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 resize-none h-full"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100 resize-none h-full"
               />
             </div>
 

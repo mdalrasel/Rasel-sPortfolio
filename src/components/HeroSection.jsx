@@ -52,7 +52,7 @@ const HeroSection = () => {
         <div className="mt-6 flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="600">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2"
+            className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2  transform  duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
           >
             <BiSolidShoppingBags /> Hire Me
           </button>
@@ -64,7 +64,7 @@ const HeroSection = () => {
           <a
             href="/resume.pdf"
             download="Rasel_Resume.pdf"
-            className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-md transition flex items-center gap-2 hover:bg-gray-600"
+            className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-md transition flex items-center gap-2 hover:bg-gray-600  transform  duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
           >
             <RiDownload2Fill /> Download Resume
           </a>

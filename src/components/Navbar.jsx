@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/">
@@ -72,12 +72,13 @@ const Navbar = () => {
         <>
           {/* backdrop */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 top-0"
             onClick={() => setIsOpen(false)}
           ></div>
 
           {/* drawer */}
-          <div className="fixed top-0 right-0 w-64 h-full bg-gray-900 text-white z-50 p-6 shadow-lg rounded-l-lg">
+          <div className="fixed top-0 right-0 w-11/12 max-w-xs h-full bg-gray-900 text-white z-50 p-6 shadow-lg rounded-l-lg">
+
             {/* Header */}
             <div className="flex justify-between items-center mb-8">
               <div>

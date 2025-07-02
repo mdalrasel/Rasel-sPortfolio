@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Articles = () => {
   const [articleData, setArticleData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [markdownContent, setMarkdownContent] = useState("");
+  
+  useEffect(() => {
+    if (selectedArticle) {
+      window.history.replaceState(null, "", `#${selectedArticle.id}`);
+    }
+  }, [selectedArticle]);
 
   useEffect(() => {
     fetch("/articles.json")
@@ -60,6 +67,23 @@ const Articles = () => {
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      {/* React Helmet for dynamic meta tags */}
+      <Helmet>
+        <title>{selectedArticle ? selectedArticle.title : "Articles"}</title>
+        <meta
+          name="description"
+          content={
+            markdownContent
+              ? markdownContent
+                .substring(0, 150)
+                .replace(/[#_*>\-\[\]\(\)`]/g, "")
+                .trim()
+              : "Read awesome articles about React and more."
+          }
+        />
+        <meta name="keywords" content="React, JavaScript, Web Development, Articles" />
+      </Helmet>
+
       {/* Mobile dropdown */}
       <div className="md:hidden sticky top-16 z-40 bg-white dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 px-4 py-4">
         <label className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -90,11 +114,10 @@ const Articles = () => {
                     setSelectedCategory(section.category);
                     setSelectedArticle(section.articles[0]);
                   }}
-                  className={`w-full text-left font-semibold text-base px-2 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition flex justify-between items-center ${
-                    isSelectedCategory
+                  className={`w-full text-left font-semibold text-base px-2 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition flex justify-between items-center ${isSelectedCategory
                       ? "bg-purple-600 text-white"
                       : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  }`}
+                    }`}
                 >
                   {section.category}
                   <span>{isSelectedCategory ? "▲" : "▼"}</span>
@@ -105,11 +128,10 @@ const Articles = () => {
                       <li key={article.id}>
                         <button
                           onClick={() => setSelectedArticle(article)}
-                          className={`w-full text-left px-2 py-1 rounded text-sm ${
-                            selectedArticle?.id === article.id
+                          className={`w-full text-left px-2 py-1 rounded text-sm ${selectedArticle?.id === article.id
                               ? "bg-purple-600 text-white"
                               : "text-gray-800 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900"
-                          }`}
+                            }`}
                         >
                           {article.title}
                         </button>
