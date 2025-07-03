@@ -131,7 +131,7 @@ const ContactSection = () => {
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com/in/mdalrasel"
+                href="https://linkedin.com/in/md-al-rasel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-purple-600 transition"
