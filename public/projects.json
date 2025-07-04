@@ -5,7 +5,7 @@
     "description": "A modern service-sharing app with real-time updates.",
     "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
     "tech": ["React", "Node.js", "MongoDB", "Firebase"],
-    "github": "https://github.com/yourusername/helpify",
+    "github": "https://github.com/mdalrasel/Helpify",
     "live": "https://helpify1.netlify.app",
     "details": "Helpify is a modern service-sharing web application where users can find, offer, and book various types of services with ease. It's designed to provide a seamless and intuitive experience for service management, booking, and real-time status updates."
   },
@@ -15,7 +15,7 @@
   "description": "A freelance task marketplace connecting clients with freelancers for micro-jobs and task-based bidding.",
   "image": "https://i.ibb.co/WWNtwmrL/screenshot-taskhive-1.png",
   "tech": ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
-  "github": "https://github.com/yourusername/work-window",
+  "github": "https://github.com/mdalrasel/work-window-client",
   "live": "https://work-window01.netlify.app/",
   "details": "Work Window is a responsive freelance task marketplace allowing users to post tasks, bid on jobs, and manage tasks in a personalized dashboard. It features secure authentication (email/password & Google), dynamic task listing, bid tracking, and a sleek UI enhanced with React Simple Typewriter and React Awesome Reveal."
 },
@@ -25,8 +25,8 @@
     "description": "My personal portfolio built using modern web technologies and deployed on Vercel.",
     "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
     "tech": ["React", "Tailwind CSS", "Vercel"],
-    "github": "https://github.com/yourusername/portfolio",
-    "live": "https://yourportfolio.com",
+    "github": "https://github.com/mdalrasel/mdalrasel",
+    "live": "https://helpify1.netlify.app/",
     "details": "Showcasing my skills, projects, and contact form. Includes dark/light mode, smooth scroll, and responsive layout."
   }
 ]
