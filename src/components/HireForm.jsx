@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { ImCross } from "react-icons/im";
 import { CiEdit, CiMail } from "react-icons/ci";
 import { IoIosSend } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
@@ -54,7 +53,7 @@ const HireForm = ({ onClose }) => {
                     aria-label="Close modal"
                     className="text-gray-400 hover:text-white transition"
                 >
-                    <ImCross className="w-6 h-6" />
+                   
                 </button>
             </div>
 
