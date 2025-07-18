@@ -44,7 +44,7 @@ const ContactSection = () => {
           <FaEnvelopeOpenText className="text-purple-400" />
           Contact
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mt-2 max-w-xl mx-auto">
+        <p className="text-white dark:text-gray-300 mt-2 max-w-xl mx-auto">
           I’m available for freelance projects, full-time opportunities, or just to chat.
           Feel free to contact me using the form or the details below.
         </p>
@@ -62,7 +62,7 @@ const ContactSection = () => {
             <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
               Contact Information
             </h3>
-            <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
+            <p className="text-white dark:text-gray-200 mb-6 leading-relaxed">
               Hi! I’m Rasel, a passionate Frontend Developer.
               I’m available for freelance projects, full-time roles, or any collaboration.
               Feel free to reach out anytime!
@@ -121,7 +121,7 @@ const ContactSection = () => {
             <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
               Find me on
             </h3>
-            <div className="flex items-center gap-6 text-gray-700 dark:text-gray-200 text-2xl">
+            <div className="flex items-center gap-6 text-white dark:text-gray-200 text-2xl">
               <a
                 href="https://github.com/mdalrasel"
                 target="_blank"
@@ -163,36 +163,36 @@ const ContactSection = () => {
             className="space-y-6 h-full flex flex-col justify-between"
           >
             <div>
-              <label className="block text-sm text-gray-600 dark:text-gray-300 mb-1">
+              <label className="block text-sm text-white dark:text-gray-300 mb-1">
                 Your Name
               </label>
               <input
                 type="text"
                 name="user_name"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-white dark:text-gray-100"
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-600 dark:text-gray-300 mb-1">
+              <label className="block text-sm text-white dark:text-gray-300 mb-1">
                 Your Email
               </label>
               <input
                 type="email"
                 name="user_email"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-white dark:text-gray-100"
               />
             </div>
             <div className="flex-grow">
-              <label className="block text-sm text-gray-600 dark:text-gray-300 mb-1">
+              <label className="block text-sm text-white dark:text-gray-300 mb-1">
                 Message
               </label>
               <textarea
                 name="message"
                 rows="5"
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-gray-900 dark:text-gray-100 resize-none h-full"
+                className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600  text-white dark:text-gray-100 resize-none h-full"
               />
             </div>
 

@@ -18,7 +18,7 @@ const SkillSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-purple-500 inline-flex items-center gap-2">
           <FaTools className="text-purple-400" /> Skills & Expertise
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-12">
+        <p className="text-white dark:text-gray-400 mb-12">
           Technologies I love working with, and improving every day.
         </p>
 
@@ -59,7 +59,7 @@ const SkillSection = () => {
           {["DaisyUI", "JWT", "Axios", "Vercel", "Netlify", "Git"].map((tech, idx) => (
             <span
               key={idx}
-              className="bg-white/20 backdrop-blur border border-purple-300 dark:border-purple-500 text-purple-700 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-medium shadow hover:scale-105 transition"
+              className="bg-white/20 backdrop-blur border border-purple-300 dark:border-purple-500 text-purple-300 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-medium shadow hover:scale-105 transition"
             >
               {tech}
             </span>

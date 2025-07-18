@@ -34,7 +34,7 @@ const ProjectSection = () => {
             <FaFolderOpen className="text-purple-400" />
             My Projects
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-white dark:text-gray-400">
             Real-world projects I've built and deployed.
           </p>
         </div>

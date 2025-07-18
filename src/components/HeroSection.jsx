@@ -111,10 +111,10 @@ const HeroSection = () => {
           >
             {/* Close Button */}
             <button
-              className="absolute  top-5 right-5 text-gray-500 hover:text-red-500 text-xl font-bold transition"
+              className="absolute  top-5 right-5 text-gray-500 hover:text-white text-xl font-bold transition"
               onClick={() => setIsModalOpen(false)}
             >
-              <ImCross className="w-6 h-6" />
+              <ImCross className="w-6 h-6 " />
             </button>
 
             {/* Modal Header */}

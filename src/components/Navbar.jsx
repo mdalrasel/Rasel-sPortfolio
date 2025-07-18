@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
+    <header className="bg-gray-900 text-white shadow-md fixed w-full z-50">
       <div className=" px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -35,7 +35,7 @@ const Navbar = () => {
                   key={item.name}
                   smooth
                   to={item.to}
-                  className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
+                  className=" hover:text-purple-600 dark:hover:text-purple-400 font-medium transition"
                 >
                   {item.name}
                 </LinkComponent>
