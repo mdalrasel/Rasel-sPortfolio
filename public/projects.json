@@ -15,8 +15,8 @@
   "description": "A freelance task marketplace connecting clients with freelancers for micro-jobs and task-based bidding.",
   "image": "https://i.ibb.co/WWNtwmrL/screenshot-taskhive-1.png",
   "tech": ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
-  "github": "https://github.com/mdalrasel/work-window-client",
-  "live": "https://work-window01.netlify.app/",
+  "github": "https://github.com/mdalrasel/work_window",
+  "live": "https://work-window.netlify.app/",
   "details": "Work Window is a responsive freelance task marketplace allowing users to post tasks, bid on jobs, and manage tasks in a personalized dashboard. It features secure authentication (email/password & Google), dynamic task listing, bid tracking, and a sleek UI enhanced with React Simple Typewriter and React Awesome Reveal."
 },
   {

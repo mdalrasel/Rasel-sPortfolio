@@ -62,7 +62,7 @@ const HeroSection = () => {
             </div>
           )}
           <a
-            href="/resume.pdf"
+            href="/public/Rasel_Frontend_Developer_Resume.pdf"
             download="Rasel_Resume.pdf"
             className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-md transition flex items-center gap-2 hover:bg-gray-600  transform  duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
           >
