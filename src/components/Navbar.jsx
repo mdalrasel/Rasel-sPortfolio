@@ -44,7 +44,7 @@ const Navbar = () => {
 
             {/* Resume Button */}
             <a
-              href="/public/Rasel_Frontend_Developer_Resume.pdf"
+              href="https://drive.google.com/file/d/1Wl3_oaDAzdNrIE9pOAkTLXuW4TuJPSjw/view?usp=sharing"
               download="Rasel_Resume.pdf"
               className="px-4 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2"
               target="_blank"
