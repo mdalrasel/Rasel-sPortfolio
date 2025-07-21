@@ -4,7 +4,6 @@ import { RiDownload2Fill } from "react-icons/ri";
 import { BiSolidShoppingBags } from "react-icons/bi";
 import HireForm from "./HireForm";
 import profilePic from "../assets/RaselProfile.png";
-import { ImCross } from "react-icons/im";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -99,34 +98,20 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* MODAL */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition duration-300 ease-in-out"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200%] animate-gradient rounded-xl shadow-xl w-full max-w-lg p-6 relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              className="absolute  top-5 right-5 text-gray-500 hover:text-white text-xl font-bold transition"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <ImCross className="w-6 h-6 " />
-            </button>
-
-            {/* Modal Header */}
-            <h2 className="text-4xl  font-bold text-white mb-4 text-center">
-              Hire Me
-            </h2>
-
-            {/* Modal Form */}
-            <HireForm onClose={() => setIsModalOpen(false)} />
-          </div>
-        </div>
-      )}
+       {/* MODAL */}
+            {isModalOpen && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition duration-300 ease-in-out p-4"
+                    onClick={() => setIsModalOpen(false)} 
+                >
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        className="rounded-xl shadow-xl w-full max-w-lg relative" 
+                    >
+                        <HireForm onClose={() => setIsModalOpen(false)} />
+                    </div>
+                </div>
+            )}
     </section>
   );
 };

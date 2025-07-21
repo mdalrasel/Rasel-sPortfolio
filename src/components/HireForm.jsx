@@ -4,6 +4,7 @@ import { IoIosSend } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import { ImCross } from "react-icons/im";
 
 const HireForm = ({ onClose }) => {
     const form = useRef();
@@ -33,7 +34,7 @@ const HireForm = ({ onClose }) => {
                         setSuccessMsg("");
                         onClose();
                     }, 3000);
-                    console.log(result)
+                    console.log(result);
                 },
                 (error) => {
                     setLoading(false);
@@ -44,21 +45,21 @@ const HireForm = ({ onClose }) => {
     };
 
     return (
-        <div className="bg-gray-900 text-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+        <div className="bg-gray-900 text-white rounded-lg shadow-xl p-6 max-w-md md:max-w-xl w-full mx-4 overflow-y-auto max-h-[90vh]">
             {/* Header */}
-            <div className="flex justify-between items-center mb-5">
+            <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-semibold">Start Your Project</h2>
                 <button
                     onClick={onClose}
                     aria-label="Close modal"
                     className="text-gray-400 hover:text-white transition"
                 >
-                   
+                    <ImCross className="w-6 h-6 " />
                 </button>
             </div>
 
             {/* Description */}
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-4">
                 Let's discuss how we can collaborate on your next big idea.
             </p>
 
@@ -69,51 +70,51 @@ const HireForm = ({ onClose }) => {
             {errorMsg && <div className="mb-4 p-3 bg-red-600 rounded">{errorMsg}</div>}
 
             {/* Form */}
-            <form className="space-y-4" ref={form} onSubmit={sendEmail}>
+            <form className="space-y-3" ref={form} onSubmit={sendEmail}>
                 {/* Name */}
                 <div className="relative">
-                    <FaUser className="absolute left-3 top-4 text-gray-400" />
+                    <FaUser className="absolute left-3 top-3 text-gray-400" /> 
                     <input
                         type="text"
                         name="user_name"
                         placeholder="Your Name"
                         required
-                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full pl-10 py-2 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" 
                     />
                 </div>
 
                 {/* Email */}
                 <div className="relative">
-                    <CiMail className="absolute left-3 top-4 text-gray-400" />
+                    <CiMail className="absolute left-3 top-3 text-gray-400" />
                     <input
                         type="email"
                         name="user_email"
                         placeholder="Your Email"
                         required
-                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full pl-10 py-2 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500" 
                     />
                 </div>
 
                 {/* Subject */}
                 <div className="relative">
-                    <CiEdit className="absolute left-3 top-4 text-gray-400" />
+                    <CiEdit className="absolute left-3 top-3 text-gray-400" /> 
                     <input
                         type="text"
                         name="subject"
                         defaultValue="Hire Rasel for a project"
-                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                        className="w-full pl-10 py-2 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none" 
                     />
                 </div>
 
                 {/* Project Details */}
                 <div className="relative">
-                    <FiFileText className="absolute left-3 top-4 text-gray-400" />
+                    <FiFileText className="absolute left-3 top-3 text-gray-400" /> 
                     <textarea
                         name="message"
                         placeholder="Describe your project..."
                         rows="4"
                         required
-                        className="w-full pl-10 py-3 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                        className="w-full pl-10 py-2 rounded-md bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none" 
                     />
                 </div>
 
@@ -121,8 +122,9 @@ const HireForm = ({ onClose }) => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
-                        }`}
+                    className={`w-full py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors flex items-center justify-center gap-2 ${
+                        loading ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
                 >
                     <IoIosSend className="w-5 h-5" />
                     {loading ? "Sending..." : "Send Proposal"}
