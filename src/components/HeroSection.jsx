@@ -4,6 +4,7 @@ import { RiDownload2Fill } from "react-icons/ri";
 import { BiSolidShoppingBags } from "react-icons/bi";
 import HireForm from "./HireForm";
 import profilePic from "../assets/RaselProfile.png";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +57,34 @@ const HeroSection = () => {
           efficient web solutions.
         </p>
 
+
+        <div className="flex items-center gap-6 text-white dark:text-gray-200 text-2xl">
+          <a
+            href="https://github.com/mdalrasel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-600 transition"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/md-al-rasel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-600 transition"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://facebook.com/mdalrasel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-600 transition"
+          >
+            <FaFacebook />
+          </a>
+        </div>
+
         {/* Buttons */}
         <div
           className="mt-6 flex flex-wrap gap-4"
@@ -78,6 +107,8 @@ const HeroSection = () => {
           </a>
         </div>
 
+
+
         <p
           className="mt-4 text-gray-500 text-sm"
           data-aos="fade-up"
@@ -98,20 +129,20 @@ const HeroSection = () => {
         </div>
       </div>
 
-       {/* MODAL */}
-            {isModalOpen && (
-                <div
-                    className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition duration-300 ease-in-out p-4"
-                    onClick={() => setIsModalOpen(false)} 
-                >
-                    <div
-                        onClick={(e) => e.stopPropagation()}
-                        className="rounded-xl shadow-xl w-full max-w-lg relative" 
-                    >
-                        <HireForm onClose={() => setIsModalOpen(false)} />
-                    </div>
-                </div>
-            )}
+      {/* MODAL */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm transition duration-300 ease-in-out p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="rounded-xl shadow-xl w-full max-w-lg relative"
+          >
+            <HireForm onClose={() => setIsModalOpen(false)} />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

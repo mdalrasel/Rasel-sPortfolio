@@ -47,11 +47,11 @@ const ProjectSection = () => {
               className={`flex flex-col md:flex-row ${idx % 2 !== 0 ? "md:flex-row-reverse" : ""
                 } bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300`}
             >
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 flex items-center justify-center bg-white dark:bg-gray-800 h-64 md:h-80">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover md:h-80"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
 
@@ -116,7 +116,7 @@ const ProjectSection = () => {
           href="https://github.com/mdalrasel?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-           className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors gap-2"
+          className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-md text-white font-semibold hover:from-teal-600 hover:to-blue-600 transition-colors gap-2"
         >
           View More Projects on GitHub
         </a>

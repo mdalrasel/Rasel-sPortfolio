@@ -25,7 +25,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-48 object-cover rounded mb-4"
+           className="w-full h-auto max-h-[500px] object-contain rounded-lg"
         />
 
         {/* Full Details */}

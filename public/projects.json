@@ -1,32 +1,63 @@
 [
   {
     "id": 1,
-    "title": "Helpify",
-    "description": "A modern service-sharing app with real-time updates.",
-    "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
-    "tech": ["React", "Node.js", "MongoDB", "Firebase"],
-    "github": "https://github.com/mdalrasel/Helpify",
-    "live": "https://helpify1.netlify.app",
-    "details": "Helpify is a modern service-sharing web application where users can find, offer, and book various types of services with ease. It's designed to provide a seamless and intuitive experience for service management, booking, and real-time status updates."
+    "title": "WorkSphere",
+    "description": "A comprehensive employee management system for Employees, HR, and Admins with secure authentication, payroll management, and role-based dashboards.",
+    "image": "https://i.ibb.co.com/20Yc56Ln/screencapture-work-sphere1-netlify-app-dashboard-2025-08-11-20-38-09.png",
+    "tech": [
+      "React",
+      "Axios",
+      "React Router DOM",
+      "Tailwind CSS",
+      "TanStack Query (React Query)",
+      "React Hook Form",
+      "Recharts",
+      "LottieFiles",
+      "Node.js",
+      "Express.js",
+      "Firebase Authentication",
+      "MongoDB Atlas"
+    ],
+    "github": "https://github.com/mdalrasel/work-sphere",
+    "live": "https://work-sphere1.netlify.app",
+    "details": "WorkSphere is a modern employee management system designed for Employees, HR personnel, and Admins. It offers secure authentication (email/password & Google Sign-In via Firebase), role-based dashboards, and responsive design. Employees can manage work logs and view payment history, HR can handle employee verification, worksheets, and salary requests, while Admins can manage users and approve payrolls. The system integrates charts (Recharts), animations (LottieFiles), and efficient server-state management using TanStack Query for a smooth experience."
   },
   {
-  "id": 2,
-  "title": "Work Window",
-  "description": "A freelance task marketplace connecting clients with freelancers for micro-jobs and task-based bidding.",
-  "image": "https://i.ibb.co/WWNtwmrL/screenshot-taskhive-1.png",
-  "tech": ["React", "Node.js", "MongoDB", "Firebase", "Tailwind CSS"],
-  "github": "https://github.com/mdalrasel/work_window",
-  "live": "https://work-window.netlify.app/",
-  "details": "Work Window is a responsive freelance task marketplace allowing users to post tasks, bid on jobs, and manage tasks in a personalized dashboard. It features secure authentication (email/password & Google), dynamic task listing, bid tracking, and a sleek UI enhanced with React Simple Typewriter and React Awesome Reveal."
-},
+    "id": 2,
+    "title": "Work Window",
+    "description": "A freelance task marketplace connecting clients with freelancers for micro-jobs and task-based bidding.",
+    "image": "https://i.ibb.co.com/sdLsS752/Screenshot-2025-08-12-102004.png",
+    "tech": [
+      "React",
+      "Axios",
+      "React Router DOM",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas"
+    ],
+    "github": "https://github.com/mdalrasel/work_window",
+    "live": "https://work-window.netlify.app/",
+    "details": "Work Window is a responsive freelance task marketplace allowing users to post tasks, bid on jobs, and manage tasks in a personalized dashboard. It features secure authentication (email/password & Google), dynamic task listing, bid tracking, and a sleek UI enhanced with React Simple Typewriter and React Awesome Reveal."
+  },
   {
     "id": 3,
-    "title": "Portfolio Website",
-    "description": "My personal portfolio built using modern web technologies and deployed on Vercel.",
-    "image": "https://i.ibb.co/p6VqZhCN/Freelancer-mg-min.png",
-    "tech": ["React", "Tailwind CSS", "Vercel"],
-    "github": "https://github.com/mdalrasel/mdalrasel",
+    "title": "Helpify-is a modern service-sharing web application",
+    "description": "Enjoy a robust and straightforward authentication system supporting both email/password and Google sign-in/registration, ensuring your data is safe. As a service provider, you have full control to add, update, and delete your own services effortlessly.",
+    "image": "https://i.ibb.co.com/21F730M5/screencapture-helpify1-netlify-app-2025-08-12-10-23-57.png",
+    "tech": [
+      "React",
+      "Axios",
+      "React Router DOM",
+      "Tailwind CSS",
+      "AOS",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Vercel"
+    ],
+    "github": "https://github.com/mdalrasel/Helpify",
     "live": "https://helpify1.netlify.app/",
-    "details": "Showcasing my skills, projects, and contact form. Includes dark/light mode, smooth scroll, and responsive layout."
+    "details": "Helpify is a modern service-sharing web application where users can find, offer, and book various types of services with ease. It's designed to provide a seamless and intuitive experience for service management, booking, and real-time status updates."
   }
 ]
